@@ -8,8 +8,8 @@
   <ng-container *ngIf="players | async as players">
     <div class="row mb-3">
       <div class="col-md-11 text-right">
-        <form [formGroup]="form" >
-          <input type="text" placeholder="First Name" formControlName="search">
+        <form [formGroup]="form">
+          <input type="text" placeholder="Buscar" formControlName="search">
         </form>
       </div>
       <div class="col-md-1">
@@ -33,12 +33,12 @@
               <td>{{player.first_name}}</td>
               <td>{{player.last_name}}</td>
               <td>{{player.position}}</td>
-              <td><button type="button" class="btn btn-sm btn-outline-danger" (click)="detail(player.id)">Actualizar</button></td>
+              <td><button type="button" class="btn btn-sm btn-outline-danger"
+                  (click)="detail(player.id)">Actualizar</button></td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
   </ng-container>
-
 </div>
