@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayersService } from '../players.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -11,7 +12,7 @@ export class ListComponent implements OnInit {
 
   players: any
   form: FormGroup
-  constructor(private service: PlayersService, private fb: FormBuilder) { }
+  constructor(private service: PlayersService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
     this.getData()
@@ -30,6 +31,10 @@ export class ListComponent implements OnInit {
 
   searchFirstName(): void {
     this.players = this.service.findPlayer(this.form.value.search)
+  }
+
+  detail(id):void {
+    this.router.navigateByUrl(`/players/${id}`)
   }
 
 }

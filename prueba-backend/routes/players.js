@@ -14,4 +14,13 @@ router.get('/:name', (req, res) => {
   playerController.getPlayerByName(req, res)
 });
 
+router.get('/id/:id', (req, res) => {
+  playerController.getPlayerById(req, res)
+});
+
+router.post('/:id', (req, res) => {
+  playerController.setPlayer(req, res)
+});
+
+
 module.exports = router;

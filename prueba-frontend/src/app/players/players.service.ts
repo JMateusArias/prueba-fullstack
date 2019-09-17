@@ -9,14 +9,22 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PlayersService {
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getPlayers(): Observable<any>{
+  getPlayers(): Observable<any> {
     return this.http.get(`${environment.apiUrl}/players`)
   }
 
-  findPlayer(name): Observable<any>{
+  findPlayer(name): Observable<any> {
     return this.http.get(`${environment.apiUrl}/players/${name}`)
+  }
+
+  getPlayerById(id): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/players/id/${id}`)
+  }
+
+  updatePlayer(id, data): Observable<any>{
+    return this.http.post(`${environment.apiUrl}/players/${id}`, data)
   }
 
 }
