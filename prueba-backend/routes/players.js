@@ -10,4 +10,8 @@ router.get('/', (req, res) => {
   playerController.getPlayers(req, res)
 });
 
+router.get('/:name', (req, res) => {
+  playerController.getPlayerByName(req, res)
+});
+
 module.exports = router;

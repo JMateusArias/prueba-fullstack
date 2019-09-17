@@ -14,4 +14,9 @@ export class PlayersService {
   getPlayers(): Observable<any>{
     return this.http.get(`${environment.apiUrl}/players`)
   }
+
+  findPlayer(name): Observable<any>{
+    return this.http.get(`${environment.apiUrl}/players/${name}`)
+  }
+
 }
